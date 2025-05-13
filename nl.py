@@ -307,4 +307,4 @@ if st.button("Generate Newsletter"):
 
 # Run the app:
 streamlit run newsletter_app.py
-""")
+
