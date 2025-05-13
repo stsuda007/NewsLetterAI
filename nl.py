@@ -44,8 +44,8 @@ def generate_with_openai(final_prompt):
         payload = {
             "model": "gpt-4-turbo",
             "messages": [{"role": "user", "content": final_prompt}],
-            "temperature": 0.7,
-            "max_tokens": 1500
+            "temperature": 0.5,
+            "max_tokens": 2000
         }
         
         response = requests.post(
@@ -76,8 +76,8 @@ def generate_with_anthropic(final_prompt):
         
         payload = {
             "model": "claude-3-haiku-20240307",
-            "max_tokens": 1500,
-            "temperature": 0.7,
+            "max_tokens": 2000,
+            "temperature": 0.5,
             "messages": [{"role": "user", "content": final_prompt}]
         }
         
@@ -114,8 +114,8 @@ def generate_with_gemini(final_prompt):
                 }
             ],
             "generationConfig": {
-                "temperature": 0.7,
-                "maxOutputTokens": 1500
+                "temperature": 0.5,
+                "maxOutputTokens": 2000
             }
         }
         
@@ -254,56 +254,56 @@ if st.button("Generate Newsletter"):
         st.error("Please enter some content to generate a newsletter.")
 
 # Instructions section
-st.markdown("---")
-st.subheader("How to use this app")
-st.markdown("""
-1. Create a file named `prompt_for_newsletter.txt` with your complete prompt template
-2. Include a placeholder `{user_input}` in your prompt template where the user's content should be inserted
-3. Set up your API keys as environment variables or input them in the sidebar
-4. Enter your content ideas in the text area above
-5. Toggle which AI providers you want to use
-6. Click 'Generate Newsletter' to create your newsletters side by side
-7. Download any newsletters you like using the download buttons
-""")
+#st.markdown("---")
+#st.subheader("How to use this app")
+#st.markdown("""
+#1. Create a file named `prompt_for_newsletter.txt` with your complete prompt template
+#2. Include a placeholder `{user_input}` in your prompt template where the user's content should be inserted
+#3. Set up your API keys as environment variables or input them in the sidebar
+#4. Enter your content ideas in the text area above
+#5. Toggle which AI providers you want to use
+#6. Click 'Generate Newsletter' to create your newsletters side by side
+#7. Download any newsletters you like using the download buttons
+#""")
 
 # Example prompt template
-st.markdown("---")
-st.subheader("Example Prompt Template")
-st.code("""
-Generate a professional newsletter based on the following input:
+#st.markdown("---")
+#st.subheader("Example Prompt Template")
+#st.code("""
+#Generate a professional newsletter based on the following input:
 
-USER INPUT:
-{user_input}
+#USER INPUT:
+#{user_input}
 
-Please follow these guidelines:
-1. Use a friendly but professional tone
-2. Include a catchy headline
-3. Organize content into clear sections
-4. Keep paragraphs short and scannable
-5. Include a call to action at the end
+#Please follow these guidelines:
+#1. Use a friendly but professional tone
+#2. Include a catchy headline
+#3. Organize content into clear sections
+#4. Keep paragraphs short and scannable
+#5. Include a call to action at the end
 
-Here are some examples of our previous newsletters for style reference:
+#Here are some examples of our previous newsletters for style reference:
 
 # Example Newsletter - January 2025
-Dear subscribers,
-...
+#Dear subscribers,
+#...
 
 # Example Newsletter - February 2025
-Hello everyone,
-...
-""")
+#Hello everyone,
+#...
+#""")
 
 # Setup instructions 
-st.markdown("---")
-st.subheader("Environment Setup")
-st.code("""
+#st.markdown("---")
+#st.subheader("Environment Setup")
+#st.code("""
 # Install required packages:
-pip install streamlit requests python-dotenv
+#pip install streamlit requests python-dotenv
 
 # Set environment variables in a .env file:
-OPENAI_API_KEY=your_openai_key_here
-ANTHROPIC_API_KEY=your_anthropic_key_here
-GOOGLE_API_KEY=your_google_key_here
+#OPENAI_API_KEY=your_openai_key_here
+#ANTHROPIC_API_KEY=your_anthropic_key_here
+#GOOGLE_API_KEY=your_google_key_here
 
 # Run the app:
 streamlit run newsletter_app.py
