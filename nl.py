@@ -298,7 +298,7 @@ if st.button("Generate Newsletter"):
 #st.subheader("Environment Setup")
 #st.code("""
 # Install required packages:
-pip install streamlit requests python-dotenv
+#pip install streamlit requests python-dotenv
 
 # Set environment variables in a .env file:
 #OPENAI_API_KEY=your_openai_key_here
