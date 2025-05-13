@@ -77,7 +77,7 @@ def generate_with_anthropic(final_prompt):
         payload = {
             "model": "claude-3-haiku-20240307",
             "max_tokens": 2000,
-            "temperature": 0.5,
+            "temperature": 0.3,
             "messages": [{"role": "user", "content": final_prompt}]
         }
         
@@ -101,7 +101,7 @@ def generate_with_gemini(final_prompt):
         return "⚠️ Google API key not found. Please add it to your environment variables."
     
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={GOOGLE_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GOOGLE_API_KEY}"
         
         payload = {
             "contents": [
@@ -114,7 +114,7 @@ def generate_with_gemini(final_prompt):
                 }
             ],
             "generationConfig": {
-                "temperature": 0.5,
+                "temperature": 0.3,
                 "maxOutputTokens": 2000
             }
         }
@@ -294,9 +294,9 @@ if st.button("Generate Newsletter"):
 #""")
 
 # Setup instructions 
-st.markdown("---")
-st.subheader("Environment Setup")
-st.code("""
+#st.markdown("---")
+#st.subheader("Environment Setup")
+#st.code("""
 # Install required packages:
 pip install streamlit requests python-dotenv
 
@@ -306,5 +306,5 @@ pip install streamlit requests python-dotenv
 #GOOGLE_API_KEY=your_google_key_here
 
 # Run the app:
-streamlit run newsletter_app.py
-""")
+#streamlit run newsletter_app.py
+#""")
