@@ -44,7 +44,7 @@ def generate_with_openai(final_prompt):
         payload = {
             "model": "gpt-4-turbo",
             "messages": [{"role": "user", "content": final_prompt}],
-            "temperature": 0.5,
+            "temperature": 0.7,
             "max_tokens": 2000
         }
         
