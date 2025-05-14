@@ -163,7 +163,7 @@ with st.sidebar:
         st.warning("No prompt template found. Please create a prompt_for_newsletter.txt file.")
 
 # Main input area
-user_input = st.text_area("Enter your newsletter content ideas:", height=200, 
+user_input = st.text_area("ニュースレターのネタを入力してください。一つのネタの冒頭に※をつけてください。", height=200, 
                          placeholder="Enter the key points you want to include in your newsletter...")
 
 # Toggle switches for LLM providers
