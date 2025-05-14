@@ -75,7 +75,7 @@ def generate_with_anthropic(final_prompt):
         }
         
         payload = {
-            "model": "claude-3-haiku-20240307",
+            "model": "claude-3-5-haiku-20241022",
             "max_tokens": 2000,
             "temperature": 0.3,
             "messages": [{"role": "user", "content": final_prompt}]
