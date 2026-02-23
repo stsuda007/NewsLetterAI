@@ -101,7 +101,7 @@ def generate_with_gemini(final_prompt):
         return "⚠️ Google API key not found. Please add it to your environment variables."
     
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GOOGLE_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key={GOOGLE_API_KEY}"
         
         payload = {
             "contents": [
